@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SYSTEM-IMADE: Expertos en soluciones de Inteligencia Artificial para empresas con más de 15 años de experiencia. Desarrollo de aplicaciones personalizadas de IA para PyMEs y autónomos.">
+    <meta name="keywords" content="inteligencia artificial, desarrollo de software, aplicaciones empresariales, IA para PyMEs, soluciones tecnológicas, automatización">
+    <meta name="author" content="SYSTEM-IMADE">
+    <title>SYSTEM-IMADE | Soluciones de Inteligencia Artificial para Empresas</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <style>
+          /* Variables CSS personalizadas */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-light: #f8fafc;
+            --text-dark: #1e293b;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/slide1.jpg');
+            background-size: cover;
+            background-position: center;
+			color:white;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        /* Animaciones para cards de servicios */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                       0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        /* Animaciones para iconos */
+        .service-icon {
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        /* Estilos para el formulario */
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-control {
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+
+        /* Navbar con efecto de cristal */
+       
+        .navbar.scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background: rgba(15, 23, 42, 0.95) !important;
+        }
+
+        /* Animaciones para sección de características */
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover .feature-icon {
+            transform: translateY(-10px);
+            color: var(--accent-color);
+        }
+		.texto-shadow{
+		text-shadow: 5px 5px 10px black;
+		}
+		.logotipo{
+		width:220px;
+		}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+	<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">SYSTEM-IMADE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#servicios">Servicios</a>
+                    </li>
+					 <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#integracion-apis">Integración API's</a>
+                    </li>
+					 <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#caracteristicas">Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4 fw-bold texto-shadow">
+Automatiza tu Negocio con Inteligencia Artificial<br> Soluciones simples para maximizar tu productividad y reducir tu carga de trabajo
+</h1>
+            <p class="lead mb-4 texto-shadow">Más de 15 años desarrollando soluciones tecnológicas innovadoras para empresas, PyMEs y autónomos</p>
+            <a href="#contacto" class="btn btn-primary btn-lg" role="button" data-bs-scroll="true" style="cursor:pointer;">Solicitar Información</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+  <section id="servicios" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Transforma tu Negocio con Nuestros Servicios de IA</h2>
+        <p class="text-center mb-4">Aprovecha el poder de la inteligencia artificial para optimizar procesos, mejorar la toma de decisiones y crear soluciones innovadoras adaptadas a las necesidades de tu empresa.</p>
+        
+        <div class="row g-4">
+            <!-- Servicio 1: Automatización Inteligente -->
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-robot fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Automatización Inteligente</h3>
+                        <p class="card-text">
+                            Diseñamos e implementamos soluciones de automatización basadas en IA que eliminan tareas repetitivas, reducen errores humanos y mejoran la productividad. 
+                            Nuestras aplicaciones inteligentes pueden optimizar flujos de trabajo en áreas como gestión de inventarios, atención al cliente, facturación y más.
+                        </p>
+                        <p><strong>Beneficios:</strong></p>
+                        <ul class="text-start">
+                            <li>Ahorro de tiempo y costos operativos.</li>
+                            <li>Reducción de errores en procesos clave.</li>
+                            <li>Optimización de la gestión empresarial con IA.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Servicio 2: Análisis Predictivo -->
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Análisis Predictivo y Big Data</h3>
+                        <p class="card-text">
+                            Aplicamos modelos de aprendizaje automático y análisis de datos avanzados para identificar patrones ocultos, predecir tendencias del mercado y optimizar estrategias empresariales.
+                            Nuestra IA transforma datos en información valiosa para mejorar la toma de decisiones y obtener una ventaja competitiva.
+                        </p>
+                        <p><strong>Aplicaciones:</strong></p>
+                        <ul class="text-start">
+                            <li>Predicción de demanda y optimización de stock.</li>
+                            <li>Análisis de comportamiento de clientes.</li>
+                            <li>Prevención de fraudes y riesgos financieros.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Servicio 3: Sistemas Personalizados con IA -->
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Desarrollo de Sistemas con IA</h3>
+                        <p class="card-text">
+                            Construimos soluciones inteligentes personalizadas que se adaptan a las necesidades específicas de tu negocio. Desde chatbots avanzados hasta sistemas de recomendación,
+                            integramos IA para potenciar tus herramientas digitales y mejorar la experiencia del usuario.
+                        </p>
+                        <p><strong>Casos de uso:</strong></p>
+                        <ul class="text-start">
+                            <li>Chatbots y asistentes virtuales para atención al cliente.</li>
+                            <li>Sistemas de recomendación personalizados (e-commerce, contenido, etc.).</li>
+                            <li>Automatización en procesos de manufactura y logística.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+	<section id="integracion-apis" class="py-5 bg-dark text-light">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Integración de APIs con Aplicaciones de Escritorio</h2>
+        <div class="row align-items-center">
+            <!-- Columna de Contenido -->
+            <div class="col-md-6">
+                <h3 class="mb-3">Conecta tu Aplicación de Escritorio con el Mundo Digital</h3>
+                <p>
+                    En la era digital, la integración de APIs es clave para mejorar la funcionalidad de las aplicaciones de escritorio. Ofrecemos servicios especializados para conectar tu software con diversas APIs, permitiendo una comunicación fluida con sistemas externos, servicios en la nube y bases de datos remotas.
+                </p>
+                <p><strong>¿Qué podemos integrar?</strong></p>
+                <ul>
+                    <li><i class="fas fa-cloud"></i> APIs de servicios en la nube (AWS, Google Cloud, Azure).</li>
+                    <li><i class="fas fa-credit-card"></i> Pasarelas de pago (PayPal, Stripe, MercadoPago).</li>
+                    <li><i class="fas fa-database"></i> Conexión con bases de datos externas (MySQL, PostgreSQL, Firebase).</li>
+                    <li><i class="fas fa-envelope"></i> Integración con APIs de correo y mensajería (Twilio, SendGrid, WhatsApp Business API).</li>
+                    <li><i class="fas fa-sync-alt"></i> Sincronización con CRMs y ERPs para optimizar la gestión empresarial.</li>
+                </ul>
+                <p>
+                    Nuestra solución garantiza seguridad, eficiencia y escalabilidad para que tu aplicación se mantenga siempre actualizada y conectada con los servicios esenciales de tu negocio.
+                </p>
+            </div>
+
+            <!-- Columna de Imagen -->
+            <div class="col-md-6 text-center">
+                <img src="images/api.jpg" alt="Integración de APIs con Aplicaciones de Escritorio" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Características -->
+<section id="caracteristicas" class="py-5 bg-warning">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5" data-aos="fade-up">¿Por qué elegir SYSTEM-IMADE?</h2>
+        
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-box text-center">
+                    <i class="fas fa-clock feature-icon mb-3"></i>
+                    <h4>15+ Años de Experiencia</h4>
+                    <p>Trayectoria probada en el sector tecnológico</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box text-center">
+                    <i class="fas fa-code feature-icon mb-3"></i>
+                    <h4>Tecnología Avanzada</h4>
+                    <p>Utilizamos las últimas tecnologías en IA</p>
+                </div>
+            </div>
+        </div> 
+        
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box text-center">
+                    <i class="fas fa-users feature-icon mb-3"></i>
+                    <h4>Equipo Especializado</h4>
+                    <p>Expertos en desarrollo y consultoría</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-box text-center">
+                    <i class="fas fa-headset feature-icon mb-3"></i>
+                    <h4>Soporte Continuo</h4>
+                    <p>Acompañamiento en todo el proceso</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nueva fila con más características -->
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-box text-center">
+                    <i class="fas fa-shield-alt feature-icon mb-3"></i>
+                    <h4>Seguridad y Confianza</h4>
+                    <p>Implementamos medidas avanzadas de ciberseguridad</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-box text-center">
+                    <i class="fas fa-chart-line feature-icon mb-3"></i>
+                    <h4>Resultados Comprobados</h4>
+                    <p>Casos de éxito en diversos sectores industriales</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="feature-box text-center">
+                    <i class="fas fa-globe feature-icon mb-3"></i>
+                    <h4>Presencia Global</h4>
+                    <p>Hemos expandido nuestros servicios a múltiples países</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+                <div class="feature-box text-center">
+                    <i class="fas fa-lightbulb feature-icon mb-3"></i>
+                    <h4>Innovación Constante</h4>
+                    <p>Investigación y desarrollo para soluciones de vanguardia</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+	<br>
+	<br>
+</section>
+
+
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact-info py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Contacta con Nosotros</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form action="mailto:info@system-imade.com" method="post" enctype="text/plain" class="bg-white p-4 rounded shadow">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                    
+                    <div class="text-center mt-4">
+					<p>
+						 <img src="images/ajusteslogonacho.png" alt="logo" class="img-fluid logotipo">
+						</p>
+						<p>
+						C/ Rodríguez San Pedro, 2 Edificio Inter Planta 3 - Oficina 311
+28015 (Madrid) España
+						</p>
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@system-imade.com" class="text-decoration-none">info@system-imade.com</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:910422448" class="text-decoration-none">910 422 448</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 SYSTEM-IMADE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+<script>
+    document.querySelector('.btn-primary').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto
+        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+    <!-- Bootstrap JS -->
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
